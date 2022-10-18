@@ -1,0 +1,52 @@
+.CardBox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25cm;
+    align-items: center;
+}
+
+.Registration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem 1rem 0rem;
+    box-shadow: 0px 20px 25px -10px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem 0rem 0rem;
+}
+
+.MainBox {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+    border-style: none;
+    width: 32rem;
+    padding: 1rem 0rem 0rem 0rem;
+}
+
+.LeftBox {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0rem 0.5rem 0rem 0rem;
+}
+
+.RigthBox {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding: 0rem 0rem 0rem 0.5rem;
+}
+
+.mat-raised-button {
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.0rem;
+}

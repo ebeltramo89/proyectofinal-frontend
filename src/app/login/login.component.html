@@ -1,0 +1,50 @@
+<form class="LogIn" #Form="ngForm" (ngSubmit)="logIn(Form)">
+
+    <mat-card class="CardBox">
+
+        <mat-card-title class="Title">
+            Login
+        </mat-card-title>
+
+        <mat-card-subtitle class="Title">
+            Please enter your Username and Password
+        </mat-card-subtitle>
+
+        <mat-card-content class="MainBox">
+
+            <div class="TopBox">
+
+                <mat-form-field appearance="outline" label="Username">
+                    <mat-label> Username </mat-label>
+                    <input matInput type="text" name="username" [(ngModel)]="UserLogin.username">
+                    <mat-icon matSuffix color="black" fontIcon="email"></mat-icon>
+                </mat-form-field>
+
+            </div>
+
+            <div class="BottomBox">
+
+                <mat-form-field appearance="outline" label="Password">
+                    <mat-label> Password </mat-label>
+                    <input matInput type="password" name="password" [(ngModel)]="UserLogin.password">
+                    <mat-icon matSuffix color="black" fontIcon="lock_outline"></mat-icon>
+                </mat-form-field>
+
+            </div>
+
+        </mat-card-content>
+
+        <div class="Title">
+            <button mat-raised-button color="primary" type="submit" > Login </button>
+        </div>
+
+        <div class="Title">
+            <h4> Don't have an account? <a routerLink='../registration' [routerLinkActive]="['active']"> Click here </a> </h4>
+        </div>
+
+        <!-- <div class="Invalid" [hidden]="UsrLog.checkUser">
+            <h3 class="Text"> Invalid Username or Password </h3>
+        </div> -->
+    </mat-card>
+
+</form>

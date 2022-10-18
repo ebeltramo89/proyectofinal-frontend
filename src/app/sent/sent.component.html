@@ -1,0 +1,29 @@
+<mat-form-field  appearance="outline" class="searchBox">
+
+    <mat-label> Search by name or surname </mat-label>
+    <button mat-icon-button color="black" matPrefix (click)="messFilter()"> <mat-icon> search </mat-icon> </button>
+    <input matInput placeholder="Search" #search class="searchInput" [(ngModel)]="textFiltered">
+    <button mat-icon-button color="black" matSuffix (click)="cleanFilter()"> <mat-icon> close </mat-icon> </button>
+
+</mat-form-field>
+
+<mat-card-title-group>
+
+    <mat-card *ngFor="let item of messDataToView">
+    <mat-card-title> To: {{item.from}} </mat-card-title>
+    <mat-card-subtitle> Subject: {{item.subject}} </mat-card-subtitle>
+    <mat-card-subtitle> Date: {{item.date}} </mat-card-subtitle>
+
+    <mat-card-content>
+        <p> {{item.message}} </p>
+    </mat-card-content>
+
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <button mat-flat-button color="black" type="delete" (click)="onDelete(item.id)">
+            Delete <mat-icon> delete </mat-icon>   
+        </button>
+    </mat-card-actions>
+    </mat-card>
+
+</mat-card-title-group>

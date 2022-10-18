@@ -1,0 +1,43 @@
+<mat-form-field  appearance="outline" class="searchBox">
+
+    <mat-label> Search by name or surname </mat-label>
+    <button mat-icon-button color="black" matPrefix (click)="messFilter()"> <mat-icon> search </mat-icon> </button>
+    <input matInput placeholder="Search" #search class="searchInput" [(ngModel)]="textFiltered">
+    <button mat-icon-button color="black" matSuffix (click)="cleanFilter()"> <mat-icon> close </mat-icon> </button>
+
+</mat-form-field>
+
+
+<mat-card-title-group>
+
+    <mat-card *ngFor="let item of messDataToView" [style.background-color]="item.read ? 'white' : '#eef3fa'">
+    <mat-card-title> From: {{item.from}} </mat-card-title>
+    <mat-card-subtitle> Subject: {{item.subject}} </mat-card-subtitle>
+    <mat-card-subtitle> Date: {{item.date}} </mat-card-subtitle>
+
+    <mat-card-content>
+        <p> {{item.message}} </p>
+    </mat-card-content>
+
+    <mat-divider inset></mat-divider>
+    <mat-card-actions>
+        <div>
+            <button mat-flat-button color="black" type="delete" [style.background-color]="item.read ? 'white' : '#eef3fa'" (click)="onDelete(item.id)">
+                Delete <mat-icon> delete </mat-icon>   
+            </button>
+            <button mat-flat-button color="black" routerLink="/message" [routerLinkActive]="['active']" [style.background-color]="item.read ? 'white' : '#eef3fa'">
+                Reply <mat-icon> reply </mat-icon>
+            </button>
+        </div>
+        <div class="readAlign">
+            <button mat-flat-button *ngIf="!item.read" (click)="markAsread(item.id)" [style.background-color]="item.read ? 'white' : '#eef3fa'">
+                Unread <mat-icon color="black" > markunread </mat-icon>
+            </button>
+            <button mat-flat-button *ngIf="item.read"  (click)="markAsread(item.id)" [style.background-color]="item.read ? 'white' : '#eef3fa'">
+                Read <mat-icon color="black"> drafts </mat-icon>
+            </button>  
+        </div> 
+    </mat-card-actions>
+    </mat-card>
+
+</mat-card-title-group>

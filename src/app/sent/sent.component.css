@@ -1,0 +1,32 @@
+.mat-card {
+    min-width: 95%;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 1rem 2rem 1rem 2rem;
+    border-radius: 0.25cm;
+}
+
+.mat-card-subtitle {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.mat-card-title {
+    margin-bottom: 0;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.mat-card-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-form-field.searchBox  {
+    max-width: 50%;
+    padding: 0rem 0rem 0rem 1rem;
+    margin: 0rem 0rem 0rem 1rem;
+    border-radius: 0.5cm;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+}

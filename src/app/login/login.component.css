@@ -1,0 +1,85 @@
+@import "~angular-notifier/styles";
+
+
+.LogIn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.CardBox {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25cm;
+    align-items:center;
+    justify-content: center;
+    width: 30rem;
+}
+
+
+.Title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0rem 0rem 0rem;
+}
+
+.MainBox {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    border-style: none;
+    width: 20rem;
+    padding: 0rem 0rem 0rem 0rem;
+    margin: 0%;
+}
+
+.TopBox {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.BottomBox {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.mat-raised-button {
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.0rem;
+}
+
+
+.Text {
+    text-align: center;
+    color: #b71c1c;
+    margin: 0%;
+}
+
+.Invalid{
+    background-color: #f7acac;
+    border-color: #cf4949;
+    border-style: solid;
+    border-width: 0.01cm;
+    border-radius: 0.2cm;
+    width: 18rem;
+    padding: 0.5rem 0rem 0.5rem 0rem;
+}
+
+::ng-deep .red-snackbar.mat-snack-bar-container {
+    color: white;
+    border-radius: 0.25cm;
+}
+
+::ng-deep .mat-simple-snackbar-action {
+    color: red;
+}

@@ -1,0 +1,60 @@
+ <mat-toolbar class="Toolbar" color="primary">
+
+    <mat-toolbar-row > 
+
+        <button mat-icon-button (click)="opened=!opened">
+            <mat-icon> menu </mat-icon>
+        </button>
+        <span> Menu </span>
+        <span class="Spacer"></span>
+
+        <button *ngIf="!logCheck" mat-icon-button routerLink="/" > <mat-icon> home </mat-icon> </button>
+        <span *ngIf="logCheck" class="Align"> <mat-icon class="Align"> person </mat-icon> {{UsrInfo.username}} </span>
+
+    </mat-toolbar-row>
+
+</mat-toolbar>
+
+<mat-sidenav-container class="Container">
+    <mat-sidenav mode="side" [(opened)]="opened" class="Nav">
+
+        <mat-list *ngIf="!logCheck">
+            <mat-nav-list>
+                <mat-list-item *ngFor="let item of nlogItems" [routerLink]="[item.link]" [routerLinkActive]="['active']">
+                    <mat-icon  matListIcon > {{item.icon}} </mat-icon>
+                    <a matLine>
+                      {{item.linkTitle}}
+                    </a>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-list> 
+
+        <mat-list *ngIf="logCheck">
+            <mat-nav-list>
+                <mat-list-item *ngFor="let item of logItems" [routerLink]="[item.link]" [routerLinkActive]="['active']">
+                    <mat-icon  matListIcon > {{item.icon}} </mat-icon>
+                    <a matLine>
+                      {{item.linkTitle}}
+                    </a>
+                </mat-list-item>
+                <mat-list-item (click)="logOut()" routerLink="login" [routerLinkActive]="['active']">
+                    <mat-icon  matListIcon > exit_to_app </mat-icon>
+                    <a matLine>
+                       Logout
+                    </a>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-list>
+        
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content">
+
+        <router-outlet> </router-outlet>
+
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
+ 
+
+ 

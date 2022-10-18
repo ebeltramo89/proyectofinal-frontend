@@ -1,0 +1,74 @@
+<form class="Registration" #Form="ngForm" (ngSubmit)="sentForm(Form)">
+
+    <mat-card class="CardBox">
+
+        <mat-card-title class="title">
+            Create Account
+        </mat-card-title>
+
+        <mat-card-subtitle class="title">
+            Fill out the form carefully for registration
+        </mat-card-subtitle>
+
+        <mat-card-content class="MainBox">
+
+            <div class="LeftBox">
+
+                <mat-form-field appearance="outline" label="Name">
+                    <mat-label> Name </mat-label>
+                    <input matInput type="text" name="name" [(ngModel)]="userData.name" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" label="Username">
+                    <mat-label> Username </mat-label>
+                    <input matInput type="text" name="userName" [(ngModel)]="userData.username" required>
+                </mat-form-field>
+
+
+                <mat-form-field appearance="outline" label="Password Confirm">
+                    <mat-label> Password Confirm </mat-label>
+                    <input matInput type="password" name="confPassword" [(ngModel)]="userData.CPassword" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" label="City">
+                    <mat-label> City </mat-label>
+                    <mat-select name="City" [(ngModel)]="userData.city" required>
+                        <mat-option *ngFor="let city of cities" [value]="city">
+                            {{city}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="RigthBox">
+
+                <mat-form-field appearance="outline" label="Surname">
+                    <mat-label> Surname </mat-label>
+                    <input matInput type="text" name="surname" [(ngModel)]="userData.surname" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" label="Password">
+                    <mat-label> Password </mat-label>
+                    <input matInput type="password" name="password" [(ngModel)]="userData.password" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" label="Country" >
+                    <mat-label> Country </mat-label>
+                    <mat-select name="Country" [(ngModel)]="userData.country" required>
+                        <mat-option *ngFor="let country of countries" [value]="country.name" (click)="changeCountry(country.id)">
+                            {{country.name}}
+                        </mat-option> 
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+
+        </mat-card-content>
+
+        <div>
+            <button mat-raised-button color="primary" type="submit"> Create </button>
+        </div>
+
+    </mat-card>
+    
+</form>
